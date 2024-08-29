@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bg: #662EBC;
+    --secondary-bg: #804AD3;
+    --dark-bg: #55269b;
+    --heavy-gray: #f5f5f5;
+    --little-heavy-gray: #ebebeb;
+    --gray: #cecece;
+    --dark-gray: #666666;
+    --active-watchlist-star: #ebeb00;
+    --green: rgb(55, 161, 65);
+    --red: rgb(207, 48, 64);
+    --green: #5f6;
+    --red: #9d1826;
+}
+
+body {
+    background-color: var(--secondary-bg);
+    font-family: "Krona One", sans-serif;
+    height: 300svh;
+}
+
+header {
+    background-color: var(--little-heavy-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+}
+
+.dark header {
+    background-color: var(--main-bg);
+    color: white;
+}
+
+.dark main {
+    background-color: var(--secondary-bg);
+    color: white;
+}
+
+.dark header .logo img {
+    filter: brightness(100%);
+}
+
+.dark header .login-and-signup-buttons button {
+    color: white;
+    border-color: white;
+    box-shadow: -2px 2px white;
+    ;
+}
+
+header .logo img {
+    height: 2.25rem;
+    filter: brightness(0);
+}
+
+.user-setting .login-and-signup-buttons {
+    display: flex;
+    gap: .5rem;
+}
+
+.login-and-signup-buttons button {
+    color: black;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: .5rem;
+    font-family: "Krona One", sans-serif;
+    font-size: 0.6125rem;
+    padding: .6rem .75rem;
+    cursor: pointer;
+    box-shadow: -2px 2px black;
+}
+
+.login-and-signup-buttons button:active,
+.dark .login-and-signup-buttons button:active {
+    position: relative;
+    top: 2px;
+    left: -2px;
+    box-shadow: unset;
+}
+
+.login-and-signup-buttons .login {
+    display: none;
+}
+
+main {
+    padding-inline: 1rem;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+main .first-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-block: 3rem;
+}
+
+.first-section .regarding {
+    align-self: center;
+    display: grid;
+    gap: 2rem;
+}
+
+.regarding h1 {
+    font-size: 1rem;
+}
+
+.regarding p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    line-height: 1.3;
+    font-size: .85rem;
+}
+
+.first-section-image img {
+    width: 100%;
+}
+
+@media (min-width:480px) {
+
+    .login-and-signup-buttons .login {
+        display: block;
+    }
+
+    .first-section .regarding h1 {
+        font-size: 1.8rem;
+    }
+
+    .first-section .regarding p {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width:700px) {
+    header {
+        padding-inline: 3rem;
+    }
+
+    main {
+        padding-inline: 3rem;
+    }
+}
+
+@media (min-width:960px) {
+    header .logo img {
+        height: 3rem;
+    }
+
+    .first-section .regarding p {
+        font-size: 1.25rem;
+    }
+
+    header .login-and-signup-buttons button {
+        padding: .75rem 1.125rem;
+        font-size: .85rem;
+    }
+
+    main .first-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* second section table of coins */
+.second-section {
+    position: relative;
+    width: calc(100% + 2rem);
+    left: -1rem;
+    display: grid;
+    gap: 2rem;
+    padding-inline: 1rem;
+}
+
+.crypto-table-container {
+    overflow-x: scroll;
+}
+
+.crypto-table-container::-webkit-scrollbar {
+    height: 5px;
+}
+
+.crypto-table-container::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+.crypto-table-container::-webkit-scrollbar-thumb {
+    background-color: var(--dark-gray);
+
+}
+
+
+.crypto-table {
+    font-family: "Poppins", sans-serif;
+    border-collapse: collapse;
+    overflow-x: scroll;
+    min-width: 70rem;
+    width: 100%;
+}
+
+.crypto-table thead {
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+    background-color: var(--little-heavy-gray);
+}
+
+.dark .crypto-table thead {
+    background-color: var(--dark-bg);
+}
+
+.crypto-table thead tr th {
+    padding-block: 1.5rem;
+}
+
+.crypto-table thead tr th div,
+.crypto-table tbody tr td div {
+    display: grid;
+    justify-items: flex-end;
+}
+
+.crypto-table .col-1 div,
+.crypto-table .col-2 div,
+.crypto-table .col-3 div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.crypto-table .col-3 div {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: .5rem;
+}
+
+.crypto-table tbody tr {
+    border-bottom: 1px solid var(--gray);
+}
+
+.crypto-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.crypto-table tbody tr td img {
+    width: 2rem;
+}
+
+.crypto-table tbody tr td {
+    padding-block: 2.5rem;
+}
+
+.dark .crypto-table tbody .col-1 i {
+    color: var(--dark-bg);
+}
+
+.crypto-table tbody .col-1 {
+    padding-left: 1rem;
+}
+
+.crypto-table tbody .col-1 i {
+    color: var(--gray);
+    font-size: 1.125rem;
+    cursor: pointer;
+}
+
+.crypto-table tbody .col-1 .active i {
+    color: var(--active-watchlist-star);
+}
+
+.crypto-table tbody .col-3 b {
+    color: var(--dark-gray);
+}
+
+.crypto-table tbody .col-3 b {
+    color: var(--dark-bg);
+}
+
+.crypto-table tbody .col-5 {
+    position: relative;
+}
+
+.crypto-table tbody .col-5 .positive {
+    color: var(--green);
+}
+
+.crypto-table tbody .col-5 .negative {
+    color: var(--red);
+}
+
+.crypto-table tbody .col-5 div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .25rem;
+    font-weight: 700;
+}
+
+.crypto-table tbody .col-5 .negative i {
+    transform: rotate(180deg) translateY(7px);
+}
+
+.crypto-table tbody .col-5 div i {
+    position: relative;
+    top: .25rem;
+}
+
+.crypto-table .col-7 {
+    padding-right: 2rem;
+}
